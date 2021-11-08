@@ -2513,6 +2513,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               $('#success > .alert-danger').append('</div>');
               //clear all fields
               $('#contactForm').trigger("reset");
+              
+              tracker.send("event", {
+                category: "formulário",
+                action: "envio",
+                label: "falha",
+              });
             },
           });
         },
